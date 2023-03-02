@@ -47,6 +47,7 @@ cmake-build-*/
 *.iws
 
 # IntelliJ
+.idea/
 out/
 
 # mpeltonen/sbt-idea plugin
@@ -78,11 +79,14 @@ fabric.properties
 # .idea/misc.xml
 # *.ipr
 
+# VSCode
+.vscode/
+
 # Sonarlint plugin
 .idea/sonarlint
 
 ### Gradle ###
-.gradle
+.gradle/
 /build/
 
 # Ignore Gradle GUI config
