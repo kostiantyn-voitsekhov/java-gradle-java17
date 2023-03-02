@@ -28,8 +28,8 @@ version = '0.0.1-SNAPSHOT'
 
 description = """"""
 
-sourceCompatibility = 1.11
-targetCompatibility = 1.11
+sourceCompatibility = 17
+targetCompatibility = 17
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
