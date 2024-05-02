@@ -48,10 +48,13 @@ publishing {
     repositories {
         maven {
             credentials {
-                username nexusLogin
-                password nexusPassword
+                username = System.getenv('CI_USERNAME') ?: project.findProperty('nexusLogin') ?: 'defaultLogin'
+                password = System.getenv('CI_PASSWORD') ?: project.findProperty('nexusPassword') ?: 'defaultPassword'
             }
-            url "${nexusMavenRepositoryUrl}"
+            def defaultRepoUrl = 'http://nexus:8081/repository/edp-maven-snapshots'
+            def releasesRepoUrl = project.findProperty('releasesRepoUrl') ?: defaultRepoUrl
+            def snapshotsRepoUrl = project.findProperty('snapshotsRepoUrl') ?: defaultRepoUrl
+            url = version.contains('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
             allowInsecureProtocol = true
         }
     }
