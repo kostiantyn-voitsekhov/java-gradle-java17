@@ -1,15 +1,21 @@
 package com.epam.edp.demo;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 public class DemoApplicationTests {
 
     @Test
-    public void contextLoads() {
+    public void testMain() {
+        // Arrange
+        String[] args = new String[]{"arg1", "arg2"};
+
+        // Act
+        DemoApplication.main(args);
+
+        // Assert
+        // UNKNOWN
     }
 }
